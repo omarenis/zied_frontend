@@ -1,23 +1,23 @@
-import { NgModule, isDevMode } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { PublicComponent } from './layouts/public/public.component';
-import { DashboardComponent } from './layouts/dashboard/dashboard.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { ServicePublicListComponent } from './screens/public/service-public/service-public-list/service-public-list.component';
+import {NgModule, isDevMode} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {PublicComponent} from './layouts/public/public.component';
+import {DashboardComponent} from './layouts/dashboard/dashboard.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {
+  ServicePublicListComponent
+} from './screens/public/service-public/service-public-list/service-public-list.component';
 import {PublicIndexComponent} from "./screens/public/public-index/public-index.component";
 import {SignupComponent} from "./screens/public/authentication/signup/signup.component";
 import {SigninComponent} from "./screens/public/authentication/signin/signin.component";
-import {ResetPassswordComponent} from "./screens/public/authentication/reset-passsword/reset-passsword.component";
 import {ServicePageComponent} from "./screens/public/service-public/service-page/service-page.component";
 import {Route, RouterModule} from "@angular/router";
-import { DashboardIndexComponent } from './screens/dashboard/dashboard-index/dashboard-index.component';
-import { ServiceCrudComponent } from './screens/dashboard/service-crud/service-crud.component';
-import { ServiceOrmComponent } from './screens/dashboard/service-orm/service-orm.component';
-import { CategoryServiceCrudComponent } from './screens/dashboard/category-service-crud/category-service-crud.component';
-import { CategoryServiceFormComponent } from './screens/dashboard/category-service-form/category-service-form.component';
-import {VerificationComponent} from "./screens/public/authentication/verification/verification.component";
+import {DashboardIndexComponent} from './screens/dashboard/dashboard-index/dashboard-index.component';
+import {ServiceCrudComponent} from './screens/dashboard/service-crud/service-crud.component';
+import {ServiceOrmComponent} from './screens/dashboard/service-orm/service-orm.component';
+import {CategoryServiceCrudComponent} from './screens/dashboard/category-service-crud/category-service-crud.component';
+import {CategoryServiceFormComponent} from './screens/dashboard/category-service-form/category-service-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {
@@ -26,6 +26,8 @@ import {
   SocialAuthServiceConfig,
   SocialLoginModule
 } from "@abacritt/angularx-social-login";
+import {ResetPasswordComponent} from "./screens/public/authentication/reset-password/reset-password.component";
+import {VerificationComponent} from "./screens/public/authentication/verification/verification.component";
 
 const routes: Route[] = [
   {
@@ -48,7 +50,10 @@ const routes: Route[] = [
             path: 'login', component: SigninComponent
           },
           {
-            path: 'reset-password', component: ResetPassswordComponent
+            path: 'reset-password', component: ResetPasswordComponent
+          },
+          {
+            path: 'verification', component: VerificationComponent
           }
         ]
       },
@@ -94,15 +99,15 @@ const routes: Route[] = [
     PublicIndexComponent,
     SignupComponent,
     SigninComponent,
-    ResetPassswordComponent,
-    VerificationComponent,
     ServicePageComponent,
     ServicePublicListComponent,
     DashboardIndexComponent,
     ServiceCrudComponent,
     ServiceOrmComponent,
     CategoryServiceCrudComponent,
-    CategoryServiceFormComponent
+    CategoryServiceFormComponent,
+    VerificationComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
@@ -130,7 +135,7 @@ const routes: Route[] = [
           },
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider()
+            provider: new GoogleLoginProvider("")
           }
         ],
         onError: (err) => {
@@ -141,4 +146,5 @@ const routes: Route[] = [
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
