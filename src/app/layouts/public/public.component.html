@@ -1,11 +1,27 @@
-<header class="fixed-top ">
+<header class="position-absolute top-0  w-100 bg-white">
+  <div class="w-100 bg-white d-lg-flex d-none justify-content-between">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="tel:+012 345 6789">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42a18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+          <span>
+            +012 345 6789
+          </span>
+        </a>
+      </li>
+    </ul>
+    <ul>
+
+    </ul>
+
+  </div>
   <nav
     class="navbar navbar-expand-lg position-absolute start-0 end-0"
     [ngClass]="{'pa-header': !scrolled, 'pa-fixed-header': scrolled}">
     <div class="container-fluid ps-2 pe-0 align-content-center">
       <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="/"
          style="transition-timing-function: ease; transition-duration: 0.6s; transition-delay: 0.0169014s;">
-        <img ngSrc="/assets/img/LUCAS%20HAMBERT.png" alt="Stephane Humbert Lucas" height="50" width="40"/>
+        <img ngSrc="/assets/img/LUCAS%20HAMBERT.png" alt="Stephane Humbert Lucas" [height]="50" [width]="40"/>
       </a>
       <ul class="d-flex justify-content-center align-content-center pt-2 d-lg-none d-block">
               <button class="btn btn-dark" type="button" >
@@ -22,29 +38,27 @@
       </button>
       </ul>
       <div class="collapse navbar-collapse" id="navigation">
-        <ul class="navbar-nav navbar-nav-hover mx-auto d-flex justify-content-around">
-          <li class="nav-item">
+        <ul class="navbar-nav navbar-nav-hover ms-auto d-flex justify-content-around align-items-center">
+          <li class="nav-item pe-md-2">
             <a class="nav-link text-white">Welcome to US</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item pe-md-2">
             <a class="nav-link text-white">Our Services</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item pe-md-2">
             <a class="nav-link text-white">Contact</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item pe-md-2">
             <a class="nav-link text-white">Get An appointment</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white">Our Partners</a>
+          <li class="nav-item pe-md-2">
+            <a class="nav-link text-white">Our Blog</a>
           </li>
-        </ul>
-        <ul class="navbar-nav d-lg-flex justify-content-end d-none" *ngIf="!connected">
-          <li class="nav-item">
-            <a class="btn btn-sm  mb-0 me-1" routerLink="/public/auth/signup">Signup</a>
+          <li class="nav-item pe-md-2">
+            <a class="btn text-white border-radius-0 btn-sm  mb-0 me-1" routerLink="/public/auth/signup">Signup</a>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-sm  mb-0 me-1" routerLink="/public/auth/login">Login</a>
+          <li class="nav-item pe-md-2">
+            <a class="btn text-white btn-sm  mb-0 me-1" routerLink="/public/auth/login">Login</a>
           </li>
         </ul>
       </div>

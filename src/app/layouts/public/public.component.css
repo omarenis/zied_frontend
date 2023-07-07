@@ -1,3 +1,10 @@
-.nav-link {
-  font-size: 14px;
+.nav-lin, .btn {
+  font-family: 'Jost', sans-serif;
+    position: relative;
+    margin-left: 30px;
+    padding: 30px 0;
+    font-size: 1rem;
+    font-weight: 700;
+    outline: none;
+    transition: .5s;
 }
